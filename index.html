@@ -4,182 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grain Rain</title>
-    <!-- Font -->
-    <style>
-      /* latin-ext */
-      @font-face {
-        font-family: "DM Mono";
-        font-style: italic;
-        font-weight: 400;
-        font-display: swap;
-        src: url("https//fonts.gstatic.com/s/dmmono/v10/aFTW7PB1QTsUX8KYth-gCKSIUKw.woff2")
-          format("woff2");
-        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-      }
-      /* latin */
-      @font-face {
-        font-family: "DM Mono";
-        font-style: italic;
-        font-weight: 400;
-        font-display: swap;
-        src: url("https//fonts.gstatic.com/s/dmmono/v10/aFTW7PB1QTsUX8KYth-gBqSI.woff2")
-          format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
-          U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      /* latin-ext */
-      @font-face {
-        font-family: "DM Mono";
-        font-style: italic;
-        font-weight: 500;
-        font-display: swap;
-        src: url("https//fonts.gstatic.com/s/dmmono/v10/aFTT7PB1QTsUX8KYth-o9YedYY35Zlk.woff2")
-          format("woff2");
-        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-      }
-      /* latin */
-      @font-face {
-        font-family: "DM Mono";
-        font-style: italic;
-        font-weight: 500;
-        font-display: swap;
-        src: url("https//fonts.gstatic.com/s/dmmono/v10/aFTT7PB1QTsUX8KYth-o9Yedb435.woff2")
-          format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
-          U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      /* latin-ext */
-      @font-face {
-        font-family: "DM Mono";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url("https//fonts.gstatic.com/s/dmmono/v10/aFTU7PB1QTsUX8KYthSQBLyM.woff2")
-          format("woff2");
-        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-      }
-      /* latin */
-      @font-face {
-        font-family: "DM Mono";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url("https//fonts.gstatic.com/s/dmmono/v10/aFTU7PB1QTsUX8KYthqQBA.woff2")
-          format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
-          U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      /* latin-ext */
-      @font-face {
-        font-family: "DM Mono";
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: url("https//fonts.gstatic.com/s/dmmono/v10/aFTR7PB1QTsUX8KYvumzEY2tbZX9.woff2")
-          format("woff2");
-        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-      }
-      /* latin */
-      @font-face {
-        font-family: "DM Mono";
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: url("https//fonts.gstatic.com/s/dmmono/v10/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2")
-          format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
-          U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-    </style>
-    <!-- Globe -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 100vh;
-        font-family: 'DM Mono';
-        background-color: #7e81be;
-        background-image: radial-gradient(
-            closest-side,
-            rgba(169, 201, 255, 1),
-            rgba(255, 187, 236, 0)
-          ),
-          radial-gradient(
-            closest-side,
-            rgba(116, 235, 213, 1),
-            rgba(244, 208, 63, 0)
-          ),
-          radial-gradient(
-            closest-side,
-            rgba(250, 172, 168, 1),
-            rgba(82, 172, 255, 0)
-          ),
-          radial-gradient(
-            closest-side,
-            rgba(181, 255, 252, 1),
-            rgba(255, 222, 233, 0)
-          ),
-          radial-gradient(
-            closest-side,
-            rgba(217, 175, 217, 1),
-            rgba(151, 217, 225, 0)
-          );
-        background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax,
-          110vmax 110vmax, 90vmax 90vmax;
-        background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax,
-          -30vmax -10vmax, 50vmax 50vmax;
-        background-repeat: no-repeat;
-        animation: 16s ani linear infinite;
-        overflow: hidden;
-      }
-
-      body::before {
-        content: "";
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-      }
-
-      @keyframes ani {
-        0%,
-        100% {
-          background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax,
-            110vmax 110vmax, 90vmax 90vmax;
-          background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax,
-            -30vmax -10vmax, 50vmax 50vmax;
-        }
-        25% {
-          background-size: 100vmax 100vmax, 90vmax 90vmax, 100vmax 100vmax,
-            90vmax 90vmax, 60vmax 60vmax;
-          background-position: -60vmax -80vmax, 50vmax -30vmax, 0vmax 10vmax,
-            -40vmax 0vmax, 60vmax 60vmax;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./fonts/DM Sans.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   </head>
   <body>
-    <h1>Hi! I'm GrainRain.</h1>
+    <main>
+      <header>
+        <img src="./img/head portrait.jpg" width="128px" height="128px" alt="head portrait">
+        <div>
+          <h1>GrainRain</h1>
+          <p>He is currently a college student.</p>
+          <p>He is currently learning a programming language.</p>
+          <p>It is said that he is very interested in space...</p>
+        </div>
+      </header>
+
+      <section>
+        <p>If you find a path with no obstacles, it probably doesn’t lead anywhere.</p>
+      </section>
+
+      <footer>
+        <a href="https://www.kihanlee.site" target="_blank">
+          <i class='bx bx-md bxs-home-heart' ></i>
+        </a>
+        <a href="https://github.com/KiHanLee" target="_blank">
+          <i class="bx bx-md bxl-github"></i>
+        </a>
+        <a href="https://t.me/kihanlee" target="_blank">
+          <i class="bx bx-md bxl-telegram"></i>
+        </a>
+        <a href="mailto:s3238382606@163.com" target="_blank">
+          <i class='bx bx-md bxs-envelope'></i>
+        </a>
+        <a href="mailto:s3238382606@gmail.com" target="_blank">
+          <i class="bx bx-md bxl-gmail"></i>
+        </a>
+      </footer>
+    </main>
   </body>
 </html>
